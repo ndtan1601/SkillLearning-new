@@ -3,7 +3,7 @@ include 'includes/header.php';
 ?>
 
 <div class="container p-3">
-    <p>Check attendance - (Class) - <?php echo date("d/m/y") ?> </p>
+    <h1 class="text-center align-items-center">Check attendance</h1>
     <div class="row p-3">
         <div class="col-11">
             <form action="testing_fixed" method="post">
