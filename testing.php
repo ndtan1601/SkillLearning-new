@@ -33,19 +33,19 @@ include 'includes/header.php';
                             <th scope="row">1</th>
                             <td>Mark Otto</td>
                             <td> <input type="checkbox"> </td>
-                            <td> <input type="text"> </td>
+                            <td> abcdefghiklmnopqrstuvwxyz </td>
                         </tr>
                         <tr>
                             <th scope="row">2</th>
                             <td>Jacob Thornton</td>
                             <td> <input class="checkbox" type="checkbox"> </td>
-                            <td> <input type="text"> </td>
+                            <td> abcdefghiklmnopqrstuvwxyz </td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
                             <td>Larry the Bird</td>
                             <td> <input class="checkbox" type="checkbox"> </td>
-                            <td> <input type="text"> </td>
+                            <td> abcdefghiklmnopqrstuvwxyz </td>
                         </tr>
                     </tbody>
                 </table>
@@ -65,25 +65,25 @@ include 'includes/header.php';
                             <th scope="row">1</th>
                             <td>Mark Otto</td>
                             <td> <input type="checkbox"> </td>
-                            <td> <input type="text"> </td>
+                            <td> abcdefghiklmnopqrstuvwxyz </td>
                         </tr>
                         <tr>
                             <th scope="row">2</th>
                             <td>Jacob Thornton</td>
                             <td> <input class="checkbox" type="checkbox"> </td>
-                            <td> <input type="text"> </td>
+                            <td> abcdefghiklmnopqrstuvwxyz </td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
                             <td>Larry the Bird</td>
                             <td> <input class="checkbox" type="checkbox"> </td>
-                            <td> <input type="text"> </td>
+                            <td> abcdefghiklmnopqrstuvwxyz </td>
                         </tr>
                         <tr>
                             <th scope="row">4</th>
                             <td>Larry the Bird</td>
                             <td> <input class="checkbox" type="checkbox"> </td>
-                            <td> <input type="text"> </td>
+                            <td> abcdefghiklmnopqrstuvwxyz </td>
                         </tr>
 
                     </tbody>
@@ -104,30 +104,30 @@ include 'includes/header.php';
                             <th scope="row">1</th>
                             <td>Mark Otto</td>
                             <td> <input type="checkbox"> </td>
-                            <td> <input type="text"> </td>
+                            <td> abcdefghiklmnopqrstuvwxyz </td>
                         </tr>
                         <tr>
                             <th scope="row">2</th>
                             <td>Jacob Thornton</td>
                             <td> <input class="checkbox" type="checkbox"> </td>
-                            <td> <input type="text"> </td>
+                            <td> abcdefghiklmnopqrstuvwxyz </td>
                         </tr>
                         <tr>
                             <th scope="row">3</th>
                             <td>Larry the Bird</td>
                             <td> <input class="checkbox" type="checkbox"> </td>
-                            <td> <input type="text"> </td>
+                            <td> abcdefghiklmnopqrstuvwxyz </td>
                         </tr>
                         <tr>
                             <th scope="row">4</th>
                             <td>Larry the Bird</td>
                             <td> <input class="checkbox" type="checkbox"> </td>
-                            <td> <input type="text"> </td>
+                            <td> abcdefghiklmnopqrstuvwxyz </td>
                         <tr>
                             <th scope="row">5</th>
                             <td>Larry the Bird</td>
                             <td> <input class="checkbox" type="checkbox"> </td>
-                            <td> <input type="text"> </td>
+                            <td> abcdefghiklmnopqrstuvwxyz </td>
                         </tr>
 
                         </tr>
