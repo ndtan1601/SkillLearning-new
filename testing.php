@@ -16,10 +16,10 @@ include 'includes/header.php';
             <button onclick="addHTMLTableRow();" value="add">Add</button>
         </div>
         <div class="col-1 text-center">
-            <button type="submit" value="edit">Edit</button>
+            <button onclick="editHTMLSelectedRow();" value="edit">Edit</button>
         </div>
         <div class="col-1 text-center">
-            <button type="submit" value="delete">Delete</button>
+            <button onclick="removeSelectedRow();" value="delete">Delete</button>
         </div>
         <div class="col-1 text-center">
             <button type="submit" value="submit">Save</button>
@@ -53,7 +53,7 @@ include 'includes/header.php';
                         <tr>
                             <th scope="row">2</th>
                             <td>Jacob Thornton</td>
-                            <td> <input class="checkbox" type="checkbox"> </td>
+                            <td> <input class="checkbox" type="checkbox" checked> </td>
                             <td> abcdefghiklmnopqrstuvwxyz </td>
                         </tr>
                         <tr>
