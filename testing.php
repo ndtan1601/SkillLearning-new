@@ -5,7 +5,7 @@ include 'includes/header.php';
 <div class="container p-3">
     <h1 class="text-center align-items-center">Check attendance</h1>
     <div class="row p-3">
-        <div class="col-11">
+        <div class="col-8">
             <form action="testing_fixed" method="post">
                 <input type="date" name="bday" id="datePicker">
                 <input type="button" value="date" id="datebtn">
@@ -13,17 +13,32 @@ include 'includes/header.php';
             </form>
         </div>
         <div class="col-1 text-center">
+            <button onclick="addHTMLTableRow();" value="add">Add</button>
+        </div>
+        <div class="col-1 text-center">
+            <button type="submit" value="edit">Edit</button>
+        </div>
+        <div class="col-1 text-center">
+            <button type="submit" value="delete">Delete</button>
+        </div>
+        <div class="col-1 text-center">
             <button type="submit" value="submit">Save</button>
         </div>
     </div>
-    <div id="carouselExampleControls" class="carousel slide p-3" data-ride="carousel">
+    <div class="tab tab-2 p-3">
+        Name: <input type="text" name="name" id="name"><br>
+        Attendance: <input type="checkbox" name="attendance" id="attendance"><br>
+        Note: <input type="text" name="note" id="note">
+    </div>
+
+    <div id="carouselExampleControls" class="carousel slide p-3" data-interval="false">
         <div class="carousel-inner">
             <div id="2022-06-13" class="carousel-item active">
-                <table class="table table-striped">
+                <table id="2022/06/13" class="table table-striped">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">First</th>
+                            <th scope="col">Full Name</th>
                             <th scope="col">Attendance</th>
                             <th scope="col">Note</th>
                         </tr>

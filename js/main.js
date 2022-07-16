@@ -54,3 +54,27 @@ $(document).ready(function() {
                     break;
                 } 
         }
+
+function addHTMLTableRow() {
+            var table = document.getElementById("2022/06/13"),
+                newRow = table.insertRow(table.length),
+                cell1 = newRow.insertCell(0),
+                cell2 = newRow.insertCell(1),
+                cell3 = newRow.insertCell(2),
+                cell4 = newRow.insertCell(3),
+                name = document.getElementById("name").value,
+                attendance = document.getElementById("attendance"),
+                note = document.getElementById("note").value;
+
+            let totalId = table.getElementsByTagName('tr')['length']; //get total num of tr to set id student in class
+
+            cell1.innerHTML = totalId - 1;
+            cell2.innerHTML = name;
+            if (attendance.checked == true) {
+                cell3.innerHTML = '<input type="checkbox" checked>'
+            } else {
+                cell3.innerHTML = '<input type="checkbox">';
+            }
+            cell4.innerHTML = note;
+
+}
