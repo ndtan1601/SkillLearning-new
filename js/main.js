@@ -63,14 +63,14 @@ $(document).ready(function() {
                 var isEmpty = true,
                     name = document.getElementById("name").value;
                 
-                if(name === "" || name.length >50) {
+                if(name === "" || name.length > 50) {
                     if(name === "") {
                         alert("Name can't be empty");
                     }
                     if(name.length > 50) {
                         alert("Name cannot exceed 50 characters");
                     }
-                    isEmpty = true;
+                    isEmpty = false;
                 }
                 return isEmpty;
             }
@@ -88,7 +88,7 @@ function addHTMLTableRow() {
 
             let totalId = table.getElementsByTagName('tr')['length']; //get total num of tr to set id student in class
 
-            if(!checkEmptyInput()) {
+            if(checkEmptyInput()) {
             cell1.innerHTML = totalId - 1;
             cell2.innerHTML = name;
             // if (attendance.checked == true) {
@@ -119,7 +119,7 @@ function SelectedRow() {
 function editHTMLSelectedRow() {
     var name = document.getElementById("name").value,
         note = document.getElementById("note").value;
-    if(!checkEmptyInput()) {
+    if(checkEmptyInput()) {
     table.rows[rIndex].cells[1].innerHTML = name;
     table.rows[rIndex].cells[2].innerHTML = document.getElementById("attendance").checked == true ? '<input type="checkbox" checked>' : '<input type="checkbox">';
     table.rows[rIndex].cells[3].innerHTML = note;
