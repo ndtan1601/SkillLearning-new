@@ -77,6 +77,8 @@ $(document).ready(function() {
 
 
 function addHTMLTableRow() {
+    if (checkEmptyInput()) {
+
             var newRow = table.insertRow(table.length),
                 cell1 = newRow.insertCell(0),
                 cell2 = newRow.insertCell(1),
@@ -88,7 +90,6 @@ function addHTMLTableRow() {
 
             let totalId = table.getElementsByTagName('tr')['length']; //get total num of tr to set id student in class
 
-            if(checkEmptyInput()) {
             cell1.innerHTML = totalId - 1;
             cell2.innerHTML = name;
             // if (attendance.checked == true) {
@@ -98,7 +99,7 @@ function addHTMLTableRow() {
             // }
             cell3.innerHTML = attendance.checked == true ? '<input type="checkbox" checked>' : '<input type="checkbox">';
             cell4.innerHTML = note;
-            }
+    }
 
             SelectedRow(); //to let delete and edit the newly created
 }
@@ -136,4 +137,3 @@ function editHTMLSelectedRow() {
 
 
 SelectedRow();
-

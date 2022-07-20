@@ -19,12 +19,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 <div class="container p-3">
     <h1 class="text-center align-items-center">Check attendance</h1>
     <div class="row p-3">
-        <div class="col-8">
+        <div class="col-7">
             <form action="testing_fixed" method="post">
                 <input type="date" name="bday" id="datePicker">
                 <input type="button" value="date" id="datebtn">
                 <!-- <p class="getDate"></p> -->
             </form>
+        </div>
+        <div class="col-1 text-center">
+            <button onclick="duplicatePrevCA();" value="addtable">Add_Table</button>
         </div>
         <div class="col-1 text-center">
             <button onclick="addHTMLTableRow();" value="add">Add</button>
@@ -182,7 +185,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
+<!-- <script type="text/javascript">
+    function duplicatePrevCA() {
+        //console.log("ok");
 
+    }
+</script>
+ -->
 <?php else: ?>
     <div class="jumbotron jumbotron-fluid">
         <h1>You don't have access to this page. This page is for teachers only!</h1>
