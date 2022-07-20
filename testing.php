@@ -1,7 +1,21 @@
 <?php
 include 'includes/header.php';
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+{
+    //$class_id = $_REQUEST["ClassID"];
+    //$date = $_REQUEST["date"];
+    $name = $_REQUEST["name"];
+    $attendance = $_REQUEST["attendance"];
+    $note = $_REQUEST["note"];
+    $sql = "update attendance set name = ?, attendance = ?, note = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sis", $name, $attendance, $note);
+    $stmt->execute();
+    if ($stmt->affected_rows == 1)
+        header("Location: testing.php?saved");
+}
 ?>
-
+<?php if ($_SESSION['teacher'] == true):?>
 <div class="container p-3">
     <h1 class="text-center align-items-center">Check attendance</h1>
     <div class="row p-3">
@@ -26,9 +40,12 @@ include 'includes/header.php';
         </div>
     </div>
     <div class="tab tab-2 p-3">
-        Name: <input type="text" name="name" id="name"><br>
-        Attendance: <input type="checkbox" name="attendance" id="attendance"><br>
-        Note: <input type="text" name="note" id="note">
+        <form action="testing.php" method="post">
+            Name: <input type="text" name="name" id="name"><br>
+            Attendance: <input type="checkbox" name="attendance" id="attendance"><br>
+            Note: <input type="text" name="note" id="note">
+            <button type="submit">Save</button>
+        </form>
     </div>
 
     <div id="carouselExampleControls" class="carousel slide p-3" data-interval="false">
@@ -165,6 +182,12 @@ include 'includes/header.php';
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
+
+<?php else: ?>
+    <div class="jumbotron jumbotron-fluid">
+        <h1>You don't have access to this page. This page is for teachers only!</h1>
+    </div>
+<?php endif; ?>
 
 <?php
 include 'includes/footer.php';
