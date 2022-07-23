@@ -56,7 +56,7 @@ $(document).ready(function() {
         }
 
     var rIndex,
-        table = document.getElementById('2022/06/13');
+        table = document.getElementById('20220613');
 
             //check empty input
             function checkEmptyInput() {
