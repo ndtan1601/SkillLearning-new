@@ -51,128 +51,130 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
         <div id="carouselExampleControls" class="carousel slide p-3" data-interval="false">
-            <div class="carousel-inner">
-                <div id="2022-06-13" class="carousel-item active">
-                    <table id="20220613" class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Full Name</th>
-                                <th scope="col">Attendance</th>
-                                <th scope="col">Note</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark Otto</td>
-                                <td> <input type="checkbox"> </td>
-                                <td> abcdefghiklmnopqrstuvwxyz </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob Thornton</td>
-                                <td> <input class="checkbox" type="checkbox" checked> </td>
-                                <td> abcdefghiklmnopqrstuvwxyz </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry the Bird</td>
-                                <td> <input class="checkbox" type="checkbox"> </td>
-                                <td> abcdefghiklmnopqrstuvwxyz </td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div class="row" style="width: 60rem; flex-wrap: unset;">
+                <button class="carousel-control-prev bg-transparent col-2" style="position: unset;" type="button" data-target="#carouselExampleControls" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </button>
+                <div class="carousel-inner col-10">
+                    <div id="2022-06-13" class="carousel-item active">
+                        <table id="20220613" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Full Name</th>
+                                    <th scope="col">Attendance</th>
+                                    <th scope="col">Note</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark Otto</td>
+                                    <td> <input type="checkbox"> </td>
+                                    <td> abcdefghiklmnopqrstuvwxyz </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob Thornton</td>
+                                    <td> <input class="checkbox" type="checkbox" checked> </td>
+                                    <td> abcdefghiklmnopqrstuvwxyz </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry the Bird</td>
+                                    <td> <input class="checkbox" type="checkbox"> </td>
+                                    <td> abcdefghiklmnopqrstuvwxyz </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="2022-06-21" class="carousel-item">
+                        <table id="20220621" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Attendance</th>
+                                    <th scope="col">Note</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark Otto</td>
+                                    <td> <input type="checkbox"> </td>
+                                    <td> abcdefghiklmnopqrstuvwxyz </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob Thornton</td>
+                                    <td> <input class="checkbox" type="checkbox"> </td>
+                                    <td> abcdefghiklmnopqrstuvwxyz </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry the Bird</td>
+                                    <td> <input class="checkbox" type="checkbox"> </td>
+                                    <td> abcdefghiklmnopqrstuvwxyz </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>Larry the Bird</td>
+                                    <td> <input class="checkbox" type="checkbox"> </td>
+                                    <td> abcdefghiklmnopqrstuvwxyz </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="2022-06-23" class="carousel-item">
+                        <table id="20220623" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Attendance</th>
+                                    <th scope="col">Note</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark Otto</td>
+                                    <td> <input type="checkbox"> </td>
+                                    <td> abcdefghiklmnopqrstuvwxyz </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob Thornton</td>
+                                    <td> <input class="checkbox" type="checkbox"> </td>
+                                    <td> abcdefghiklmnopqrstuvwxyz </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry the Bird</td>
+                                    <td> <input class="checkbox" type="checkbox"> </td>
+                                    <td> abcdefghiklmnopqrstuvwxyz </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>Larry the Bird</td>
+                                    <td> <input class="checkbox" type="checkbox"> </td>
+                                    <td> abcdefghiklmnopqrstuvwxyz </td>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Larry the Bird</td>
+                                    <td> <input class="checkbox" type="checkbox"> </td>
+                                    <td> abcdefghiklmnopqrstuvwxyz </td>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div id="2022-06-21" class="carousel-item">
-                    <table id="20220621" class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Attendance</th>
-                                <th scope="col">Note</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark Otto</td>
-                                <td> <input type="checkbox"> </td>
-                                <td> abcdefghiklmnopqrstuvwxyz </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob Thornton</td>
-                                <td> <input class="checkbox" type="checkbox"> </td>
-                                <td> abcdefghiklmnopqrstuvwxyz </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry the Bird</td>
-                                <td> <input class="checkbox" type="checkbox"> </td>
-                                <td> abcdefghiklmnopqrstuvwxyz </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">4</th>
-                                <td>Larry the Bird</td>
-                                <td> <input class="checkbox" type="checkbox"> </td>
-                                <td> abcdefghiklmnopqrstuvwxyz </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div id="2022-06-23" class="carousel-item">
-                    <table id="20220623" class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Attendance</th>
-                                <th scope="col">Note</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark Otto</td>
-                                <td> <input type="checkbox"> </td>
-                                <td> abcdefghiklmnopqrstuvwxyz </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob Thornton</td>
-                                <td> <input class="checkbox" type="checkbox"> </td>
-                                <td> abcdefghiklmnopqrstuvwxyz </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Larry the Bird</td>
-                                <td> <input class="checkbox" type="checkbox"> </td>
-                                <td> abcdefghiklmnopqrstuvwxyz </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">4</th>
-                                <td>Larry the Bird</td>
-                                <td> <input class="checkbox" type="checkbox"> </td>
-                                <td> abcdefghiklmnopqrstuvwxyz </td>
-                            <tr>
-                                <th scope="row">5</th>
-                                <td>Larry the Bird</td>
-                                <td> <input class="checkbox" type="checkbox"> </td>
-                                <td> abcdefghiklmnopqrstuvwxyz </td>
-                        </tbody>
-                    </table>
-                </div>
+                <button class="carousel-control-next bg-transparent col-2" style="position: unset;" type="button" data-target="#carouselExampleControls" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </button>
             </div>
-            <button class="carousel-control-prev bg-transparent" type="button" data-target="#carouselExampleControls" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </button>
-            <button class="carousel-control-next bg-transparent" type="button" data-target="#carouselExampleControls" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </button>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
