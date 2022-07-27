@@ -49,10 +49,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div id="carouselExampleControls" class="carousel slide p-3" data-interval="false">
             <div class="row" style="width: 60rem; flex-wrap: unset;">
-                <button class="carousel-control-prev bg-transparent col-2" style="position: unset;" type="button" data-target="#carouselExampleControls" data-slide="prev">
+                <a class="carousel-control-prev bg-info col-2 border border-0" style="position: unset;" type="button" data-target="#carouselExampleControls" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
-                </button>
+                </a>
                 <div class="carousel-inner col-10">
                     <div id="2022-06-13" class="carousel-item active">
                         <table id="20220613" class="table table-striped">
@@ -167,7 +167,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </table>
                     </div>
                 </div>
-                <button class="carousel-control-next bg-transparent col-2" style="position: unset;" type="button" data-target="#carouselExampleControls" data-slide="next">
+                <button class="carousel-control-next bg-info col-2 border border-0" style="position: unset;" type="button" data-target="#carouselExampleControls" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </button>
