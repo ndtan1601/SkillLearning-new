@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container p-3">
         <h1 class="text-center align-items-center">Check attendance</h1>
         <div class="row p-3">
-            <div class="col-7">
+            <div class="col-8">
                 <form action="testing_fixed" method="post">
                     <input type="date" name="bday" id="datePicker">
                     <input type="button" value="date" id="datebtn">
@@ -36,9 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="col-1 text-center">
                 <button onclick="removeSelectedRow();" value="delete">Delete</button>
-            </div>
-            <div class="col-1 text-center">
-                <button type="submit" value="submit">Save</button>
             </div>
         </div>
         <div class="tab tab-2 p-3">
@@ -180,7 +177,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
+    <!-- <script src="js/main.js"></script>
     <script type="text/javascript">
         function duplicatePrevCA() {
             //console.log("ok");
@@ -221,7 +218,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // console.log(pos);
             // carousel.innerHTML = pos;
         }
-    </script>
+    </script> -->
 
 <?php else : ?>
     <div class="jumbotron jumbotron-fluid">
