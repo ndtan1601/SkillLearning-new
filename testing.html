@@ -1,0 +1,143 @@
+<html lang="en">
+    <head>
+        <title>test table</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+            .container {overflow: hidden;}
+            .tab {float: left;}
+            .tab-2 {margin-left: 50px;}
+            .tab-2 input {display: block; margin-bottom: 20px;}
+            tr {transition: all .25s ease-in-out;}
+            tr:hover {background-color: #eee; cursor: pointer;}
+        </style>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="tab tab-1">
+                <table id="table" border="1">
+                    <tr>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Age</th>
+                    </tr>
+                    <tr>
+                        <td>A1</td>
+                        <td>B1</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>A3</td>
+                        <td>B3</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td>A2</td>
+                        <td>B2</td>
+                        <td>20</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="tab tab-2">
+                First name: <input type="text" name="fname" id="fname">
+                Last name: <input type="text" name="lname" id="lname">
+                Age: <input type="number" name="age" id="age">
+
+                <button onclick="addHTMLTableRow();">Add</button>
+                <button onclick="editHTMLSelectedRow();">Edit</button>
+                <button onclick="removeSelectedRow();">Remove</button>
+            </div>
+        </div>
+
+        <script>
+
+            var rIndex, 
+                table = document.getElementById("table");
+
+            //check empty input
+            function checkEmptyInput() {
+                var isEmpty = true,
+                    fname = document.getElementById("fname").value,
+                    lname = document.getElementById("lname").value,
+                    age = document.getElementById("age").value;
+                
+                if(fname === "") {
+                    alert("First name can't be empty");
+                    isEmpty = true;
+                }
+                if (lname === "") {
+                    alert("Last name can't be empty");
+                    isEmpty = true;
+                }
+                if (age < 0 || age > 200) {
+                    alert("Age mustn't be <0 or >200 ");
+                    isEmpty = true;
+                }
+                return isEmpty;
+            }
+
+            //add row
+            function addHTMLTableRow() {
+                //get the table by id
+                //create a new roll and cells
+                //get value from input text
+                //set the values into row cells
+                if(!checkEmptyInput()) {
+                var newRow = table.insertRow(table.length),
+                    cell1 = newRow.insertCell(0),
+                    cell2 = newRow.insertCell(1),
+                    cell3 = newRow.insertCell(2),
+                    fname = document.getElementById("fname").value,
+                    lname = document.getElementById("lname").value,
+                    age = document.getElementById("age").value;
+
+
+                cell1.innerHTML = fname;
+                cell2.innerHTML = lname;
+                cell3.innerHTML = age;
+
+                //selectedRowToInput();
+                }
+            }
+
+            //display selected row data into input text
+            function selectedRowToInput() {
+                for(var i = 1; i < table.rows.length; i++) {
+                    table.rows[i].onclick = function() {
+                        //get the selected row index
+                        rIndex = this.rowIndex;
+                        console.log(rIndex);
+                        document.getElementById("fname").value = this.cells[0].innerHTML;
+                        document.getElementById("lname").value = this.cells[1].innerHTML;
+                        document.getElementById("age").value = this.cells[2].innerHTML;
+                    };
+                }
+            }
+            
+            function editHTMLSelectedRow() {
+                var fname = document.getElementById("fname").value,
+                    lname = document.getElementById("lname").value,
+                    age = document.getElementById("age").value;
+                if(!checkEmptyInput()) {
+                table.rows[rIndex].cells[0].innerHTML = fname;
+                table.rows[rIndex].cells[1].innerHTML = lname;
+                table.rows[rIndex].cells[2].innerHTML = age;
+                }
+            }
+
+            function removeSelectedRow() {
+                table.deleteRow(rIndex);
+                //clear input text
+                document.getElementById("fname").value = "";
+                document.getElementById("lname").value = "";
+                document.getElementById("age").value = "";
+            }
+
+            selectedRowToInput();
+        </script>
+
+    </body>
+</html>
