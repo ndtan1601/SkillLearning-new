@@ -1,24 +1,48 @@
 <?php
 include 'includes/header.php';
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$servername = "localhost";
+$username = "root";
+$password = "";
+try
+{
+    $conn1 = new PDO("mysql:host=$servername;dbname=skillshare", $username, $password);
+    // Set the PDO error mode to exception
+    $conn1->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e)
+{
+    echo "Connection failed: " . $e->getMessage();
+}
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+{
     //$class_id = $_REQUEST["ClassID"];
-    //$date = $_REQUEST["date"];
+    $date = $_REQUEST["bday"];
     $name = $_REQUEST["name"];
     $attendance = $_REQUEST["attendance"];
     $note = $_REQUEST["note"];
-    $sql = "update attendance set name = ?, attendance = ?, note = ?";
+    $sql = "update attendance set attendance = ?, note = ? where name = ? and date = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sis", $name, $attendance, $note);
+    $stmt->bind_param("isss", $attendance, $note, $name, $date);
     $stmt->execute();
     if ($stmt->affected_rows == 1)
         header("Location: testing.php?saved");
+    else
+    {
+        $sql = "insert into attendance (classid, date, name, attendance, note) values (1, '2022-06-13', ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sss", $name, $attendance, $note);
+        $stmt->execute();
+        if ($stmt->affected_rows == 1)
+            header("Location: testing.php?added");
+    }
 }
+var_dump($_REQUEST);
 ?>
 <?php if ($_SESSION['teacher'] == true) : ?>
     <div class="container p-3">
         <h1 class="text-center align-items-center">Check attendance</h1>
         <div class="row p-3">
-            <div class="col-8">
+            <div class="col-7">
                 <form action="testing_fixed" method="post">
                     <input type="date" name="bday" id="datePicker">
                     <input type="button" value="date" id="datebtn">
@@ -37,22 +61,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="col-1 text-center">
                 <button onclick="removeSelectedRow();" value="delete">Delete</button>
             </div>
+            <div class="col-1 text-center">
+                <button type="submit" value="submit">Save</button>
+            </div>
         </div>
         <div class="tab tab-2 p-3">
             <form action="testing.php" method="post">
                 Name: <input type="text" name="name" id="name"><br>
-                Attendance: <input type="checkbox" name="attendance" id="attendance"><br>
+                Date: <input type="date" name="bday"><br>
+                Attendance: <input type="radio" name="attendance" value="1"> Present <input type="radio" name="attendance" value="0"> Absent <br>
                 Note: <input type="text" name="note" id="note">
-                <button type="submit">Save</button>
+                <button type="submit" class="btn btn-primary">Save</button>
             </form>
         </div>
 
         <div id="carouselExampleControls" class="carousel slide p-3" data-interval="false">
             <div class="row" style="width: 60rem; flex-wrap: unset;">
-                <a class="carousel-control-prev bg-info col-2 border border-0" style="position: unset;" type="button" data-target="#carouselExampleControls" data-slide="prev">
+                <button class="carousel-control-prev bg-info col-2" style="position: unset; border: none;" type="button" data-target="#carouselExampleControls" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
-                </a>
+                </button>
                 <div class="carousel-inner col-10">
                     <div id="2022-06-13" class="carousel-item active">
                         <table id="20220613" class="table table-striped">
@@ -65,6 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </tr>
                             </thead>
                             <tbody>
+                                <!--
                                 <tr>
                                     <th scope="row">1</th>
                                     <td>Mark Otto</td>
@@ -83,6 +112,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <td> <input class="checkbox" type="checkbox"> </td>
                                     <td> abcdefghiklmnopqrstuvwxyz </td>
                                 </tr>
+                                -->
+                                <?php
+                                $sql = "select name, attendance, note from attendance where date = '2022-06-13'";
+                                $result = $conn1->query($sql);
+                                if ($result->rowCount() > 0)
+                                {
+                                    $i = 1;
+                                    while ($row = $result->fetch(PDO::FETCH_ASSOC))
+                                    {
+                                        //echo "<tr><td>" . $i . "</td><td>" . $row['name'] . "</td><td>" . $row['attendance'] . "</td><td>" . $row['note'] . "</td></tr>";
+                                        echo "<tr><td>" . $i . "</td><td>" . $row['name'] . "</td><td>";
+                                        if ($row['attendance'] == 1)
+                                            echo "<input class='checkbox' type='checkbox' checked>";
+                                        else
+                                            echo "<input class='checkbox' type='checkbox'>";
+                                        echo "</td><td>" . $row['note'] . "</td></tr>";
+                                        $i++;
+                                    }
+                                    echo "</table>";
+                                }
+                                ?>
                             </tbody>
                         </table>
                     </div>
@@ -97,6 +147,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </tr>
                             </thead>
                             <tbody>
+                                <!--
                                 <tr>
                                     <th scope="row">1</th>
                                     <td>Mark Otto</td>
@@ -121,6 +172,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <td> <input class="checkbox" type="checkbox"> </td>
                                     <td> abcdefghiklmnopqrstuvwxyz </td>
                                 </tr>
+                                -->
+                                <?php
+                                $sql = "select name, attendance, note from attendance where date = '2022-06-21'";
+                                $result = $conn1->query($sql);
+                                if ($result->rowCount() > 0)
+                                {
+                                    $i = 1;
+                                    while ($row = $result->fetch(PDO::FETCH_ASSOC))
+                                    {
+                                        echo "<tr><td>" . $i . "</td><td>" . $row['name'] . "</td><td>";
+                                        if ($row['attendance'] == 1)
+                                            echo "<input class='checkbox' type='checkbox' checked>";
+                                        else
+                                            echo "<input class='checkbox' type='checkbox'>";
+                                        echo "</td><td>" . $row['note'] . "</td></tr>";
+                                        $i++;
+                                    }
+                                    echo "</table>";
+                                }
+                                ?>
                             </tbody>
                         </table>
                     </div>
@@ -135,6 +206,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </tr>
                             </thead>
                             <tbody>
+                                <!--
                                 <tr>
                                     <th scope="row">1</th>
                                     <td>Mark Otto</td>
@@ -163,11 +235,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <td>Larry the Bird</td>
                                     <td> <input class="checkbox" type="checkbox"> </td>
                                     <td> abcdefghiklmnopqrstuvwxyz </td>
+                                </tr>
+                                -->
+                                <?php
+                                $sql = "select name, attendance, note from attendance where date = '2022-06-23'";
+                                $result = $conn1->query($sql);
+                                if ($result->rowCount() > 0)
+                                {
+                                    $i = 1;
+                                    while ($row = $result->fetch(PDO::FETCH_ASSOC))
+                                    {
+                                        echo "<tr><td>" . $i . "</td><td>" . $row['name'] . "</td><td>";
+                                        if ($row['attendance'] == 1)
+                                            echo "<input class='checkbox' type='checkbox' checked>";
+                                        else
+                                            echo "<input class='checkbox' type='checkbox'>";
+                                        echo "</td><td>" . $row['note'] . "</td></tr>";
+                                        $i++;
+                                    }
+                                    echo "</table>";
+                                }
+                                ?>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                <button class="carousel-control-next bg-info col-2 border border-0" style="position: unset;" type="button" data-target="#carouselExampleControls" data-slide="next">
+                <button class="carousel-control-next bg-info col-2" style="position: unset; border: none;" type="button" data-target="#carouselExampleControls" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </button>
@@ -177,7 +270,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <!-- <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
     <script type="text/javascript">
         function duplicatePrevCA() {
             //console.log("ok");
@@ -218,7 +311,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // console.log(pos);
             // carousel.innerHTML = pos;
         }
-    </script> -->
+    </script>
 
 <?php else : ?>
     <div class="jumbotron jumbotron-fluid">

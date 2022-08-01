@@ -114,47 +114,5 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
-    <script type="text/javascript">
-        // function duplicatePrevCA() {
-        //     //console.log("ok");
-        //     // var newCarouselItem = document.createElement('div'),
-        //     //     position = document.getElementsByClassName('carousel-inner')[0];
-        //     // position.appendChild(newCarouselItem);
-        //     var copyFrom = document.getElementsByClassName('active'),
-        //         carousel = document.getElementsByClassName('carousel-inner');
-        //     var cF = [].map.call(copyFrom, copy => copy.innerHTML)[2]; //the first two active class are in header so take the 3rd one
-        //     //carou = [].map.call(carousel, posit => posit.innerHTML)[0]; //get all tables
-        //     //console.log(cF);
-        //     //console.log(pos);
-        //     //position.innerHTML += cF;
-        //     var myRe = /\d{8}/; //identify id of table
-        //     var myArRe = myRe.exec(cF);
-        //     //console.log(myArRe);
-        //     var currentDate = new Date();
-        //     var currentDay = String(currentDate.getDate()),
-        //         currentMonth = currentDate.getMonth() + 1 < 10 ? "0" + String(currentDate.getMonth() + 1) : String(currentDate.getMonth() + 1);
-        //     currentYear = String(currentDate.getFullYear());
-        //     //console.log(currentDay, currentMonth);
-        //     cF = cF.replace(myArRe[0], currentYear + currentMonth + currentDay); //replace the cloned table date id into today
-        //     //console.log(cF);
-        //     var newEl = document.createElement('div');
-        //     newEl.setAttribute('class', 'carousel-item');
-        //     newEl.setAttribute('id', `${currentYear}-${currentMonth}-${currentDay}`);
-        //     newEl.innerHTML = cF;
-        //     var position = document.getElementsByTagName('div')[13];
-        //     position.appendChild(newEl);
-        //     // var createCarouselItem = `<div id="${currentYear}-${currentMonth}-${currentDay}" class="carousel-item"> </div>`;
-        //     // //console.log(createCarouselItem);
-        //     // //createCarouselItem.innerHTML = cF;
-        //     // var myRe2 = />\s</;
-        //     // var myArRe2 = myRe2.exec(createCarouselItem);
-        //     // console.log(myArRe2);
-        //     // createCarouselItem = createCarouselItem.replace(myArRe2[0], ">" + cF + "<");
-        //     // pos += createCarouselItem;
-        //     // console.log(pos);
-        //     // carousel.innerHTML = pos;
-        // }
-    </script>
-
+    <!-- <script src="main.js"></script> -->
 </footer>

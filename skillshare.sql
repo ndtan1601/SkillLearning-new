@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 27, 2022 at 12:00 PM
+-- Generation Time: Jul 31, 2022 at 02:50 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `attendance` (
-  `ClassID` int(11) NOT NULL,
+  `classid` int(11) NOT NULL,
   `date` date NOT NULL,
   `name` text NOT NULL,
   `attendance` tinyint(1) NOT NULL,
@@ -39,8 +39,19 @@ CREATE TABLE `attendance` (
 -- Dumping data for table `attendance`
 --
 
-INSERT INTO `attendance` (`ClassID`, `date`, `name`, `attendance`, `note`) VALUES
-(1, '2022-06-13', 'Mark Otto', 0, ' abcdefghiklmnopqrstuvwxyz ');
+INSERT INTO `attendance` (`classid`, `date`, `name`, `attendance`, `note`) VALUES
+(1, '2022-06-13', 'Mark Otto', 0, 'going somewhere'),
+(1, '2022-06-13', 'Jacob Thornton', 1, 'abcdefghiklmnopqrstuvwxyz'),
+(1, '2022-06-13', 'Larry the Bird', 0, 'abcdefghiklmnopqrstuvwxyz'),
+(2, '2022-06-21', 'Mark Otto', 0, 'abcdefghiklmnopqrstuvwxyz'),
+(2, '2022-06-21', 'Jacob Thornton', 0, 'abcdefghiklmnopqrstuvwxyz'),
+(2, '2022-06-21', 'Larry the Bird', 0, 'abcdefghiklmnopqrstuvwxyz'),
+(3, '2022-06-23', 'Mark Otto', 0, 'abcdefghiklmnopqrstuvwxyz'),
+(3, '2022-06-23', 'Jacob Thornton', 0, 'abcdefghiklmnopqrstuvwxyz'),
+(3, '2022-06-23', 'Larry the Bird', 0, 'abcdefghiklmnopqrstuvwxyz'),
+(1, '0000-00-00', 'this is Thor', 0, '2022-06-13'),
+(1, '0000-00-00', 'Jesse Lindgard', 0, 'testiing 1 2 3 4'),
+(1, '2022-06-13', 'Jesse', 1, '1 2 3 4 5 ');
 
 -- --------------------------------------------------------
 
@@ -268,7 +279,7 @@ INSERT INTO `users` (`ID`, `User_name`, `Email`, `hash`, `Avatar`) VALUES
 -- Indexes for table `attendance`
 --
 ALTER TABLE `attendance`
-  ADD KEY `attend_class_1` (`ClassID`);
+  ADD KEY `attend_class_1` (`classid`);
 
 --
 -- Indexes for table `classroom`
@@ -369,7 +380,7 @@ ALTER TABLE `users`
 -- Constraints for table `attendance`
 --
 ALTER TABLE `attendance`
-  ADD CONSTRAINT `attend_class_1` FOREIGN KEY (`ClassID`) REFERENCES `classroom` (`class_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `attend_class_1` FOREIGN KEY (`classid`) REFERENCES `classroom` (`class_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `classroom`
